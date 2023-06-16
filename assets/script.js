@@ -22,6 +22,7 @@ const arrowRight = document.querySelector(".arrow_right");
 const arrowLeft = document.querySelector(".arrow_left");
 const dotsContainer = document.querySelector(".dots");
 let dots = [];
+let position = 0;
 
 
 
@@ -42,3 +43,15 @@ let dots = [];
     dotsContainer.appendChild(dot);
     dots.push(dot);
   });
+
+  // Affichage point en cours
+  function updateDots() {
+    dots.forEach((dot, index) => {
+      dot.classList.remove("dot_selected");
+      if (index === position) {
+        dot.classList.add("dot_selected");
+      }
+    });
+  }
+
+  updateDots();
