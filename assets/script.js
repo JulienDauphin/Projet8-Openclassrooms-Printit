@@ -55,3 +55,33 @@ let position = 0;
   }
 
   updateDots();
+
+  const bannerImg = document.querySelector(".banner-img");
+  const bannerText = document.querySelector("#banner p");
+
+// Changement Slide  
+  function changeSlide() {
+    bannerImg.src = "./assets/images/slideshow/" + slides[position].image;
+    bannerText.innerHTML = slides[position].tagLine;
+  }
+
+// Clic sur une flèche
+  function ArrowClic(direction) {
+    position += direction;
+    updateDots();
+    changeSlide();
+  }
+
+    // Clic sur la flèche de droite 
+    arrowRight.addEventListener("click", function() {
+        console.log("Clic sur la flèche de droite");
+        console.log(position);
+        ArrowClic(1);
+      });
+    
+      // Clic sur la flèche de gauche 
+      arrowLeft.addEventListener("click", function() {
+        console.log("Clic sur la flèche de gauche");
+        console.log(position);
+        ArrowClic(-1);
+      });
