@@ -20,6 +20,10 @@ const slides = [
 
 const arrowRight = document.querySelector(".arrow_right");
 const arrowLeft = document.querySelector(".arrow_left");
+const dotsContainer = document.querySelector(".dots");
+let dots = [];
+
+
 
   // Clic sur la flèche de droite 
   arrowRight.addEventListener("click", function() {
@@ -29,4 +33,12 @@ const arrowLeft = document.querySelector(".arrow_left");
   // Clic sur la flèche de gauche 
   arrowLeft.addEventListener("click", function() {
     console.log("Clic sur la flèche de gauche");
+  });
+
+  // Création des points
+  slides.forEach(() => {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    dotsContainer.appendChild(dot);
+    dots.push(dot);
   });
