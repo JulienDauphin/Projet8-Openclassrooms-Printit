@@ -2,7 +2,7 @@
 (function() {
   const slides = [
     {
-      image: "slide1.jpg",
+      image: "slide1.jpg", 
       tagLine: "Impressions tous formats <span>en boutique et en ligne</span>"
     },
     {
@@ -49,7 +49,7 @@
   // Fonction pour mettre à jour les points avec 2 paramètres dans la méthode forEach
   //  (dot = point en cours d'itération et index = index de l'élément dans le tableau (auto))
   function updateDots() {
-    dots.forEach((dot, index) => {
+    dots.forEach(function(dot, index) {
       dot.classList.remove("dot_selected");
       if (index === position) {
         dot.classList.add("dot_selected");
@@ -66,7 +66,7 @@
   }
 
   // Création des points (1 Div avec classe dot pour chaque élément du tableau slides)
-  slides.forEach(() => {
+  slides.forEach(function()  {
     const dot = document.createElement("div");
     dot.classList.add("dot");
     dotsContainer.appendChild(dot);
@@ -88,7 +88,7 @@
   });
 
   // Clic sur un point
-  dots.forEach((dot, index) => {
+  dots.forEach(function(dot, index) {
     dot.addEventListener("click", function() {
       position = index;
       updateDots();
